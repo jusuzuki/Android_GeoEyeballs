@@ -15,4 +15,12 @@
         android:id="@+id/signupActivityButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/gotoLoginButton"
+        android:layout_above="@+id/signupActivityButton"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

@@ -25,9 +25,7 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "65NlcfKu2fjtbgH6oQHN3kN7Ek5zrA829PJDttOy", "DRvNB2OiTC5Ezc6zSQcCTyp2GDcxVXrTF368k4Ow");
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
