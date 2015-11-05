@@ -100,25 +100,15 @@ public class MainActivity extends AppCompatActivity {
                     mMediaUri = data.getData();
                     try {
                         Bitmap bitmapImage = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mMediaUri);
-
-                        Log.i("AppInfo", "Image Received");
-
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
                         bitmapImage.compress(Bitmap.CompressFormat.PNG, 10, stream);
-
                         byte[] byteArray = stream.toByteArray();
-
                         ParseFile file = new ParseFile("image.png", byteArray);
-
                         ParseObject object = new ParseObject("Image");
-
-                        //object.put("username", ParseUser.getCurrentUser().getUsername());
                         object.put("image", file);
                         ParseACL parseACL = new ParseACL();
                         parseACL.setPublicReadAccess(true);
                         object.setACL(parseACL);
-
                         object.saveInBackground(new SaveCallback() {
                             @Override
                             public void done(ParseException e) {
