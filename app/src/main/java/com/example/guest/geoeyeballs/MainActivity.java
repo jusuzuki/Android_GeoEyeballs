@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.signupActivityButton) Button signupActivityButton;
     @Bind(R.id.gotoLoginButton) Button gotoLoginButton;
     @Bind(R.id.logoutButton) Button logoutButton;
+    @Bind(R.id.uploadPhotoButton) Button uploadPhotoButton;
+
+
+    public static final int PICK_PHOTO_REQUEST = 2; //what does this mean?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
+        });
+
+        uploadPhotoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                choosePhotoIntent.setType("image/*");
+                startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
+                }
         });
     }
 }
